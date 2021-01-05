@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".Restoration">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:text="@string/restauration"
+        android:layout_marginTop="72dp"
+        android:textColor="@color/design_default_color_on_primary"
+        android:textSize="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.077" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="@string/entrer_votre_email"
+        android:textSize="22dp"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="100dp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="147dp"
+        tools:ignore="MissingConstraints"  />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/restaurer"
+        android:textSize="15dp"
+        android:background="@color/white"
+        android:layout_below="@+id/editTextTextPersonName9"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="10dp"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="677dp"
+        tools:ignore="MissingConstraints" />
+</RelativeLayout>

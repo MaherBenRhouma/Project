@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "972505101198",
+    "project_id": "autho-19a64",
+    "storage_bucket": "autho-19a64.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972505101198:android:a91a73e6708bf2f5f86adf",
+        "android_client_info": {
+          "package_name": "com.dsi32.covidd_encyclopedia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "972505101198-22t0i92375dfoip95go9rk1e0qjbpvea.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeBLPnYCSoPz6cl1x9sIJXuZZ-a-Twqh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "972505101198-22t0i92375dfoip95go9rk1e0qjbpvea.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

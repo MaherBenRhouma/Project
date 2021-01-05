@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Covidd_Encyclopedia</string>
+    <string name="connecter">connect</string>
+    <string name="s_inscrire">subscribe</string>
+    <string name="mot_de_passe_oubli_e">forgot password</string>
+    <string name="email">mail</string>
+    <string name="nom">name</string>
+    <string name="pr_nom">last name</string>
+    <string name="mot_de_passe">password</string>
+    <string name="confirmer_mot_de_passe">confirm password</string>
+    <string name="valider">validate</string>
+    <string name="annuler">cancel</string>
+    <string name="restauration">restoration</string>
+    <string name="entrer_votre_email">type your mail</string>
+    <string name="restaurer">restore</string>
+    <string name="accueil">Home</string>
+    <string name="profile">profil</string>
+    <string name="a_propos">"about us "</string>
+    <string name="param_tres">settings</string>
+    <string name="d_connexion">log out</string>
+    <string name="utilisateur">user</string>
+    <string name="utilisateur_gmail_com">User@gmail.com</string>
+    <string name="adresse_rue_ville">adress : Street/City</string>
+    <string name="contact_facebook_com">Contact: Facebook.com</string>
+    <string name="retourne">Return</string>
+    <string name="contact">Contact</string>
+    <string name="application_mobile_qui_r_pond_vos_questions_sur_le_covid_19_tout_savoir_sur_la_pand_mie_de_coronavirus_qui_a_d_j_fait_des_millions_de_morts_dans_le_monde">Mobile application that answers your questions about Covid - 19, to know everything about the coronavirus pandemic which has already killed millions of people around the world</string>
+</resources>
