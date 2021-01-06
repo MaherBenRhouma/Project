@@ -1,14 +1,26 @@
 package com.dsi32.covidd_encyclopedia;
 
 public class User {
-    public String nom, prenom, email, utilisateur;
+    public String nom, prenom, email, password, utilisateur;
 
-    public User(String nom, String prenom, String email, String utilisateur){
+    public User(){
+    }
+
+    public User(String nom, String prenom, String email, String password, String utilisateur){
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
+        this.password = password;
         this.utilisateur = utilisateur;
 
+    }
+
+    public String getUtilisateur() {
+        return utilisateur;
+    }
+
+    public void setUtilisateur(String utilisateur) {
+        this.utilisateur = utilisateur;
     }
 
     public String getNom() {
@@ -34,12 +46,13 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public String getUtilisateur() {
-        return utilisateur;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUtilisateur(String utilisateur) {
-        this.utilisateur = utilisateur;
+    public void setPassword(String password) {
+        this.password = password;
     }
+
+
 }

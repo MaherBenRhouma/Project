@@ -60,7 +60,7 @@ public class Inscription extends AppCompatActivity {
                 String prenom = reg_prenom.getText().toString();
                 String password = reg_password.getText().toString();
                 String confirm = reg_confirm.getText().toString();
-                User user = new User(email, utilisateur, nom, prenom);
+                User user = new User(email, nom, prenom, password, utilisateur);
 
                 if (nom.isEmpty()) {
                     reg_nom.setError("entrez votre nom!");
@@ -88,7 +88,7 @@ public class Inscription extends AppCompatActivity {
                     return;
                 }
 
-                reference.child(utilisateur).setValue("user");
+                reference.child(utilisateur).setValue(user);
                 openn();
             }
         });
