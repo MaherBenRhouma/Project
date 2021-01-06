@@ -29,7 +29,7 @@
         android:textSize="20dp"
         android:drawableLeft="@drawable/ic_action_user"
         android:background="#11000000"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress|textNoSuggestions"
         android:hint="@string/utilisateur" />
 
     <EditText
