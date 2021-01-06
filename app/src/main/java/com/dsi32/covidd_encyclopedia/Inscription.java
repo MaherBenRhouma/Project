@@ -14,106 +14,95 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Inscription extends AppCompatActivity implements View.OnClickListener {
-    private FirebaseAuth mAuth;
+public class Inscription extends AppCompatActivity {
+
     Button button;
     Button button2;
-    private EditText emaill,utilisateurr,nomm,prenomm,passwordd,confirmm;
+    EditText reg_email, reg_utilisateur, reg_nom, reg_prenom, reg_password, reg_confirm;
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inscription);
 
-        mAuth = FirebaseAuth.getInstance();
+        reg_email =  findViewById(R.id.email);
+        reg_utilisateur =  findViewById(R.id.utilisateur);
+        reg_nom =  findViewById(R.id.nom);
+        reg_prenom =  findViewById(R.id.prenom);
+        reg_password =  findViewById(R.id.password);
+        reg_confirm =  findViewById(R.id.confirm);
+        button =  findViewById(R.id.button);
+        button2 =  findViewById(R.id.button2);
 
-        emaill = (EditText) findViewById(R.id.email);
-        utilisateurr = (EditText) findViewById(R.id.utilisateur);
-        nomm = (EditText) findViewById(R.id.nom);
-        prenomm = (EditText) findViewById(R.id.prenom);
-        passwordd = (EditText) findViewById(R.id.password);
-        confirmm = (EditText) findViewById(R.id.confirm);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMain();
+            }
+        });
 
-        button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(this);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        button2 = (Button) findViewById(R.id.button2);
-        button2.setOnClickListener(this);
+                rootNode = FirebaseDatabase.getInstance();
+                reference = rootNode.getReference("users");
 
+                String email = reg_email.getText().toString();
+                String utilisateur = reg_utilisateur.getText().toString();
+                String nom = reg_nom.getText().toString();
+                String prenom = reg_prenom.getText().toString();
+                String password = reg_password.getText().toString();
+                String confirm = reg_confirm.getText().toString();
+
+                if (nom.isEmpty()) {
+                    reg_nom.setError("entrez votre nom!");
+                    reg_nom.requestFocus();
+                    return;
+                }
+                if (prenom.isEmpty()) {
+                    reg_prenom.setError("entrez votre prenom!");
+                    reg_prenom.requestFocus();
+                    return;
+                }
+                if (utilisateur.isEmpty()) {
+                    reg_utilisateur.setError("entrez votre nom d'utilisateur!");
+                    reg_utilisateur.requestFocus();
+                    return;
+                }
+                if (password.isEmpty()) {
+                    reg_password.setError("entrez votre mot de passe!");
+                    reg_password.requestFocus();
+                    return;
+                }
+                if (confirm.isEmpty()) {
+                    reg_confirm.setError("confirmer votre mot de passe!");
+                    reg_confirm.requestFocus();
+                    return;
+                }
+
+
+                User user = new User(email, utilisateur, nom, prenom, confirm);
+                reference.child(utilisateur).setValue("user");
+                openn();
+            }
+        });
     }
 
-
-    public void openmaion() {
-        Intent intent11 = new Intent(this, MainActivity.class);
-        startActivity(intent11);
-    }
-    @Override
-    public void onClick(View v) {
-        switch(v.getId()){
-            case R.id.button:
-                startActivity(new Intent(this, MainActivity.class));
-                break;
-            case R.id.button2:
-                registeruser();
-                break;
-
-
-        }
+    private void openn() {
+        Intent intentttaaa = new Intent(this, MainActivity.class);
+        startActivity(intentttaaa);
     }
 
-    private <RegisterUser> void registeruser() {
-        String email = emaill.getText().toString().trim();
-        String utilisateur = utilisateurr.getText().toString().trim();
-        String nom = nomm.getText().toString().trim();
-        String prenom = prenomm.getText().toString().trim();
-        String password = passwordd.getText().toString().trim();
-        String confirm = confirmm.getText().toString().trim();
-
-        if (nom.isEmpty()) {
-            nomm.setError("entrez votre nom!");
-            nomm.requestFocus();
-            return;
-        }
-        if (prenom.isEmpty()) {
-            prenomm.setError("entrez votre prenom!");
-            prenomm.requestFocus();
-            return;
-        }
-        if (utilisateur.isEmpty()) {
-            utilisateurr.setError("entrez votre nom d'utilisateur!");
-            utilisateurr.requestFocus();
-            return;
-        }
-        if (password.isEmpty()) {
-            passwordd.setError("entrez votre mot de passe!");
-            passwordd.requestFocus();
-            return;
-        }
-        if (confirm.isEmpty()) {
-            confirmm.setError("confirmer votre mot de passe!");
-            confirmm.requestFocus();
-            return;
-        }
-
-        mAuth.createUserWithEmailAndPassword(utilisateur, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-
-                        if (task.isSuccessful()) {
-                            User user = new User(nom, prenom, email);
-                            FirebaseDatabase.getInstance().getReference("Users")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                }
-                            });
-                        }
-
-                    }
-                });
-
+    private void openMain() {
+        Intent intenttta = new Intent(this, MainActivity.class);
+        startActivity(intenttta);
     }
 }
+
