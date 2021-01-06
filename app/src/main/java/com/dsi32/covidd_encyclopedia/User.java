@@ -4,7 +4,6 @@ public class User {
     public String nom, prenom, email, utilisateur;
 
     public User() {
-
     }
     public User(String nom, String prenom, String email, String utilisateur){
         this.nom = nom;
@@ -12,9 +11,6 @@ public class User {
         this.email = email;
         this.utilisateur = utilisateur;
 
-    }
-
-    public User(String email, String utilisateur, String nom, String prenom, String confirm) {
     }
 
     public String getNom() {
