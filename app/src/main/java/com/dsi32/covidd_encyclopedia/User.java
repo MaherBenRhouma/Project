@@ -3,8 +3,6 @@ package com.dsi32.covidd_encyclopedia;
 public class User {
     public String nom, prenom, email, utilisateur;
 
-    public User() {
-    }
     public User(String nom, String prenom, String email, String utilisateur){
         this.nom = nom;
         this.prenom = prenom;

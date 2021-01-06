@@ -19,7 +19,7 @@
         android:contentDescription="TODO" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/user"
         android:layout_width="400dp"
         android:layout_height="50dp"
         android:layout_below="@+id/imageView2"
@@ -33,10 +33,10 @@
         android:hint="@string/utilisateur" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/password"
         android:layout_width="400dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/editTextTextPersonName2"
+        android:layout_below="@+id/user"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:ems="10"
@@ -55,7 +55,7 @@
         android:textSize="20dp"
         android:background="@color/white"
         android:textColor="#fff"
-        android:layout_below="@+id/editTextTextPersonName3"
+        android:layout_below="@+id/password"
         android:layout_marginTop= "30dp"
         />
     <Button
